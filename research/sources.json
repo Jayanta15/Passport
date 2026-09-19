@@ -1,0 +1,107 @@
+{
+  "commerce-ar": {
+    "title": "Department of Commerce Annual Report 2024-25",
+    "url": "https://www.commerce.gov.in/files/2025-08/Commerce_AR-2024-25-English-1.pdf",
+    "date": "February 2025",
+    "tier": 1,
+    "evidence": "research/sources/commerce-annual-report-2024-25.txt"
+  },
+  "msme-ar": {
+    "title": "Ministry of MSME Annual Report 2024-25",
+    "url": "https://msme.gov.in/static/uploads/2025/06/cdd1fa9e3553498f59e6fef26bcc34b4.pdf",
+    "date": "2025",
+    "tier": 1,
+    "evidence": "research/sources/msme-annual-report-2024-25.txt"
+  },
+  "dgft-handbook": {
+    "title": "E-Commerce Exports Handbook for MSMEs",
+    "url": "https://content.dgft.gov.in/Website/EcommExportHandbokMSME_E.pdf",
+    "date": "January 2023",
+    "tier": 1,
+    "evidence": "research/sources/dgft-ecommerce-exports-handbook.md"
+  },
+  "pib-reforms": {
+    "title": "Government measures to promote exports",
+    "url": "https://www.commerce.gov.in/files/d-m-y/PIB2149736.pdf",
+    "date": "29 July 2025",
+    "tier": 1,
+    "evidence": "research/sources/pib-export-promotion.txt"
+  },
+  "rbi-pacb": {
+    "title": "RBI regulation of Payment Aggregator – Cross Border",
+    "url": "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=12561",
+    "date": "31 October 2023",
+    "tier": 1,
+    "evidence": "research/sources/rbi-pa-cross-border.md"
+  },
+  "wto-costs": {
+    "title": "Trade Costs and Inclusive Growth",
+    "url": "https://www.wto.org/english/res_e/booksp_e/trade-costs-incl-growth_full_e.pdf",
+    "date": "2016",
+    "tier": 1,
+    "evidence": "research/sources/wto-trade-costs-and-growth.md"
+  },
+  "ficci-sme": {
+    "title": "FICCI Report on SMEs in India",
+    "url": "https://ficci.in/public/storage/SPDocument/23826/gDgHYdVQZUEeikm2MEJ0B8x3z8pqjOjWlYMUyc8d.pdf",
+    "date": "September 2023",
+    "tier": 2,
+    "evidence": "research/sources/ficci-smes-in-india.md"
+  },
+  "rize": {
+    "title": "Razorpay Rize",
+    "url": "https://razorpay.com/rize/rize",
+    "date": "Undated; accessed 19 September 2026",
+    "tier": 3,
+    "evidence": "research/sources/rize-01-program.md"
+  },
+  "razorpay-pricing": {
+    "title": "Razorpay Payments Pricing",
+    "url": "https://razorpay.com/pricing",
+    "date": "Undated; accessed 19 September 2026",
+    "tier": 3,
+    "evidence": "research/sources/razorpay-02-pricing.md"
+  },
+  "skydo": {
+    "title": "Skydo Receive Cross-Border Payments",
+    "url": "https://www.skydo.com/features/receive-cross-border-payments",
+    "date": "Undated; accessed 19 September 2026",
+    "tier": 3,
+    "evidence": "research/sources/skydo-receive-cross-border.md"
+  },
+  "stripe-global": {
+    "title": "Stripe global availability – India",
+    "url": "https://stripe.com/in/global",
+    "date": "Undated; accessed 19 September 2026",
+    "tier": 3,
+    "evidence": "research/sources/stripe-india-global.md"
+  },
+  "stripe-docs": {
+    "title": "Stripe India international payments documentation",
+    "url": "https://docs.stripe.com/india-accept-international-payments?locale=en-GB",
+    "date": "Undated; accessed 19 September 2026",
+    "tier": 3,
+    "evidence": "research/passport-competitors.md"
+  },
+  "airwallex-payments": {
+    "title": "Airwallex cross-border payments",
+    "url": "https://www.airwallex.com/en-uk/ppc/cross-border-payments",
+    "date": "Undated; accessed 19 September 2026",
+    "tier": 3,
+    "evidence": "research/passport-competitors.md"
+  },
+  "airwallex-accounts": {
+    "title": "Airwallex Global Accounts",
+    "url": "https://www.airwallex.com/en-fr/business-account/global-accounts",
+    "date": "Undated; accessed 19 September 2026",
+    "tier": 3,
+    "evidence": "research/passport-competitors.md"
+  },
+  "ey-exports": {
+    "title": "Enabling e-commerce exports from India",
+    "url": "https://www.ey.com/content/dam/ey-unified-site/ey-com/en-in/newsroom/2024/07/ey-enabling-e-commerce-exports-from-india.pdf",
+    "date": "July 2024",
+    "tier": 2,
+    "evidence": "research/sources/search-snippets.md"
+  }
+}

@@ -1,0 +1,223 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Rize Passport — Judge Write-up</title><style>
+@page { size: A4; margin: 16mm 15mm 18mm; @bottom-right { content: "Rize Passport  ·  " counter(page); color: #64748b; font-size: 8px; } }
+:root { --ink:#102033; --muted:#526274; --blue:#0b63f6; --soft:#eef5ff; --line:#dbe4ef; --gold:#b7791f; }
+* { box-sizing:border-box; }
+body { margin:0; color:var(--ink); font-family: Inter, Arial, sans-serif; font-size:10.2pt; line-height:1.55; }
+h1 { color:#08224a; font-size:29pt; line-height:1.05; letter-spacing:-0.8px; margin:0 0 2mm; }
+h2 { color:#0b3b78; font-size:18pt; line-height:1.2; margin:10mm 0 4mm; padding-bottom:2mm; border-bottom:1px solid var(--line); break-after:avoid; }
+h1 + h2 { color:var(--blue); border:0; margin:0 0 7mm; font-size:16pt; }
+h3 { color:#17365d; font-size:13pt; margin:7mm 0 2mm; break-after:avoid; }
+p { margin:0 0 3.4mm; }
+strong { color:#0c2747; }
+a { color:#075cca; text-decoration:none; }
+blockquote { margin:5mm 0; padding:4mm 5mm; background:var(--soft); border-left:4px solid var(--blue); border-radius:2mm; color:#213a5a; }
+blockquote p { margin:0; }
+ul, ol { margin:2mm 0 4mm; padding-left:6mm; }
+li { margin:1.2mm 0; }
+table { width:100%; border-collapse:collapse; margin:4mm 0 6mm; font-size:8.2pt; line-height:1.35; break-inside:avoid; }
+th { background:#0b3b78; color:white; text-align:left; padding:2.5mm; font-weight:700; }
+td { border:1px solid var(--line); padding:2.5mm; vertical-align:top; }
+tr:nth-child(even) td { background:#f7faff; }
+hr { border:0; border-top:1px solid var(--line); margin:6mm 0; }
+body > p:nth-of-type(-n+3) { color:var(--muted); font-size:9pt; }
+h2:nth-of-type(2), h2:nth-of-type(3), h2:nth-of-type(4), h2:nth-of-type(5) { page-break-before:auto; }
+@media print { a { color:#075cca; } h2, h3 { break-after:avoid; } table, blockquote { break-inside:avoid; } }
+</style></head><body><h1>Rize Passport</h1>
+<h2>Turning Indian ambition into global readiness</h2>
+<p><strong>Judge write-up · 19 September 2026</strong><br />
+<strong>Product:</strong> Razorpay Rize Passport<br />
+<strong>Research note:</strong> Public facts are cited. All market funnels and commercial scenarios are directional assumptions, not Razorpay forecasts or published pricing.</p>
+<blockquote>
+<p><strong>The idea in one sentence:</strong> Passport uses signals Razorpay may already hold—with merchant consent—to tell an Indian business where it is ready to expand, what route it should take, what registrations and product rules apply, and what the product should cost in that market.</p>
+</blockquote>
+<h2>1. The problem: India has the ambition; small businesses need a path</h2>
+<p>A friend recently sent me this message:</p>
+<blockquote>
+<p>“Hello Jayanta, I’m so happy to share that I’ve launched my very own saree label — Rāsya by Akansha! A little dream of mine, now come to life. Each saree is handwoven and sourced directly from the weavers of Varanasi—pure georgette, cotton silk, mulberry silk and more. Authentic weaves with real gold zari, at honest prices.”</p>
+</blockquote>
+<p>That message stayed with me because it captures what Indian entrepreneurship actually looks like. It is personal, product-led and ambitious. A founder has already taken the hard first steps: finding the weavers, understanding the materials, creating a brand, building a catalogue and putting her reputation behind every product.</p>
+<p>The next ambition is obvious: <em>Could this brand sell to customers in London, New York or Dubai?</em> The appetite for risk is there. The product is there. What is missing is a reliable way to turn ambition into an operating decision.</p>
+<p>This is not a niche aspiration. India recorded <strong>$778.13 billion of merchandise and services exports in FY2023-24</strong>. The Department of Commerce subsequently reported that April–December 2024 exports reached an estimated <strong>$602.64 billion</strong>, 6.03% above the same period a year earlier.<a href="https://www.commerce.gov.in/files/2025-08/Commerce_AR-2024-25-English-1.pdf">[1]</a> MSMEs sit at the centre of that story: the Ministry of MSME describes them as contributing around <strong>30% of GDP and more than 45% of exports</strong>.<a href="https://msme.gov.in/static/uploads/2025/06/cdd1fa9e3553498f59e6fef26bcc34b4.pdf">[2]</a></p>
+<p>The government is also trying to widen digital participation. The MSME-TEAM initiative has a ₹277.35 crore outlay and aims to onboard five lakh micro and small enterprises to e-commerce between 2024 and 2027, including 2.5 lakh women-owned businesses.<a href="https://msme.gov.in/static/uploads/2025/06/cdd1fa9e3553498f59e6fef26bcc34b4.pdf">[2]</a> DGFT’s export handbook explicitly identifies textiles, handloom and apparel, handicrafts, home décor, and semi-precious jewellery as Indian strengths for cross-border e-commerce—the exact kind of categories Passport was designed around.<a href="https://content.dgft.gov.in/Website/EcommExportHandbokMSME_E.pdf">[3]</a></p>
+<p>Yet accepting a foreign card is only the last visible step in a much longer decision chain. Before a merchant gets there, she must answer:</p>
+<ol>
+<li><strong>Which market has real demand—not just anecdotal interest?</strong></li>
+<li><strong>Is the business operationally ready for that market?</strong></li>
+<li><strong>Can it export directly, or should another party carry transaction and compliance liability?</strong></li>
+<li><strong>Which registrations, customs setup and product rules apply to this exact SKU?</strong></li>
+<li><strong>What customer price absorbs duty, tax, service fees and returns while protecting margin?</strong></li>
+</ol>
+<p>DGFT itself advises exporters to study foreign demand, customer segments, culture, seasonality and competitor pricing before selecting a market. It also states that ITC-HS classification determines export policy and helps identify destination-country requirements; non-compliance can create penalties or import-country issues.<a href="https://content.dgft.gov.in/Website/EcommExportHandbokMSME_E.pdf">[3]</a> WTO research shows why this burden falls disproportionately on smaller firms: trade friction includes far more than tariffs, and reducing export delays benefits SMEs relatively more.<a href="https://www.wto.org/english/res_e/booksp_e/trade-costs-incl-growth_full_e.pdf">[4]</a> Indian industry evidence points in the same direction—SMEs report demand for simpler tax compliance and import-export regulation.<a href="https://ficci.in/public/storage/SPDocument/23826/gDgHYdVQZUEeikm2MEJ0B8x3z8pqjOjWlYMUyc8d.pdf">[5]</a></p>
+<p>The problem, then, is not lack of ambition. It is fragmented decision-making. Demand signals sit in payments. Product identity sits in KYC, GST and the merchant catalogue. Rules sit across regulators and advisers. Pricing lives in a spreadsheet. Liability decisions often happen only after a problem appears.</p>
+<p><strong>Indian businesses have the ambition and the risk appetite. They need the right insight at the right moment—and help operationalising it.</strong></p>
+<h2>2. The solution: Passport</h2>
+<p>Rize Passport is a proposed decision and execution layer for Indian heritage-fashion and jewellery businesses going global. It is deliberately focused on the work between “I want to export” and “I am ready to switch on this market.” It has two surfaces.</p>
+<h3>Radar: where should I go, and am I ready?</h3>
+<p>Radar begins with a message a founder immediately understands: the INR-equivalent value of international intent already waiting at checkout. It combines consented payment signals—foreign-card attempts, destination, attempted order value and repeat intent—with the products Razorpay has verified during KYC.</p>
+<p>For each candidate market, Radar shows:</p>
+<ul>
+<li>observed demand and product mix;</li>
+<li>merchant and KYC-derived product context;</li>
+<li>readiness gates for demand, margin headroom and returns;</li>
+<li>a clear GO, WAIT or WATCHING verdict;</li>
+<li>an explainable recommended route: not yet, launch directly from India, use a managed model, or consider a local entity at scale.</li>
+</ul>
+<p>The important design choice is that Radar does not produce generic country advice. It produces a recommendation for <em>this merchant, these products and this market</em>.</p>
+<h3>Launch Plan: how do I make the market operational?</h3>
+<p>Once a market passes Radar, Launch Plan turns the recommendation into a working commercial path.</p>
+<p>It lets the merchant compare <strong>Passport Direct</strong> with a proposed <strong>Passport Managed</strong> model. Direct keeps the Indian brand as merchant and exporter of record. Managed represents a future Razorpay or designated-partner model for payment collection, indirect-tax administration, fraud decisions, disputes and transaction support—subject to legal validation and commercial agreement.</p>
+<p>Launch Plan then provides:</p>
+<ul>
+<li>a product- and destination-specific repository of registrations, tax setup, customs setup, product rules and conditional approvals;</li>
+<li>the issuing authority, official source and type of adviser who can help;</li>
+<li>clearly labelled fictional provider examples for the prototype;</li>
+<li>destination pricing that starts from a Razorpay-observed market base, while allowing the merchant to override that number;</li>
+<li>automatic recalculation of duty, illustrative service fee, returns provision, tax, recommended customer price and merchant proceeds.</li>
+</ul>
+<p>Passport intentionally excludes logistics. It is not trying to become a shipping platform. Its job is to make the market-entry decision explainable and operational before payments are enabled.</p>
+<h2>3. The market: large enough to matter, narrow enough to pilot</h2>
+<p>India had approximately <strong>5.77 crore Udyam/UAP registrations as of 31 December 2024</strong>. That is a broad formalised-business denominator, not Passport’s addressable market. A more useful qualification lens is turnover: the MSME report’s bands imply roughly <strong>10.99 lakh registrations with declared turnover of ₹1 crore or more</strong>, through the ₹250 crore band.<a href="https://msme.gov.in/static/uploads/2025/06/cdd1fa9e3553498f59e6fef26bcc34b4.pdf">[2]</a></p>
+<p>Passport’s initial serviceable market should be defined by observable fit rather than a top-down market percentage. The merchant should:</p>
+<ul>
+<li>sell physical products online;</li>
+<li>operate in a supported category;</li>
+<li>have consented KYC, GST, catalogue and payment signals;</li>
+<li>show international intent or active export interest;</li>
+<li>have repeatable product and returns processes;</li>
+<li>be willing to confirm product materials and claims.</li>
+</ul>
+<p>If only <strong>1%–3%</strong> of the ₹1 crore-plus registration pool met those conditions, the directional serviceable market would be approximately <strong>11,000–33,000 merchants</strong>. That percentage is an assumption to be validated, not an observed national conversion rate. It is useful because it gives the pilot a falsifiable target without pretending that all 5.77 crore registrations are prospects.</p>
+<p>An external estimate placed Indian e-commerce exports at roughly <strong>$4–5 billion in FY2023</strong>, but this is a consultancy estimate rather than an official national series.<a href="https://www.ey.com/content/dam/ey-unified-site/ey-com/en-in/newsroom/2024/07/ey-enabling-e-commerce-exports-from-india.pdf">[6]</a> The stronger “why now” signal is institutional: DGFT, Commerce and MSME programmes are all investing in digital market access, export guidance and e-commerce enablement.<a href="https://www.commerce.gov.in/files/d-m-y/PIB2149736.pdf">[7]</a> Passport can make those ambitions actionable inside a merchant workflow.</p>
+<h3>Competitive landscape</h3>
+<table>
+<thead>
+<tr>
+<th>Player</th>
+<th>Publicly visible strength</th>
+<th>Where Passport is different</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Skydo</strong></td>
+<td>Cross-border receivables for Indian exporters, local receiving accounts, FIRA and fee/FX positioning.<a href="https://www.skydo.com/features/receive-cross-border-payments">[8]</a></td>
+<td>Passport begins before collection: demand diagnosis, readiness gates, route/liability choice, SKU-level requirements and destination pricing.</td>
+</tr>
+<tr>
+<td><strong>Stripe</strong></td>
+<td>Global payment infrastructure; India documentation supports international transactions subject to account, IEC and enablement requirements. India remains shown as Preview on Stripe’s global availability page.<a href="https://docs.stripe.com/india-accept-international-payments?locale=en-GB">[9]</a><a href="https://stripe.com/in/global">[10]</a></td>
+<td>Passport is merchant-specific market-entry intelligence, not only payment acceptance infrastructure.</td>
+</tr>
+<tr>
+<td><strong>Airwallex</strong></td>
+<td>Global accounts, FX, local payment methods, transfers and payouts in supported markets.<a href="https://www.airwallex.com/en-uk/ppc/cross-border-payments">[11]</a><a href="https://www.airwallex.com/en-fr/business-account/global-accounts">[12]</a></td>
+<td>Passport is designed around Indian KYC/payment context and market-readiness decisions. India-specific availability was not established in the public pages reviewed.</td>
+</tr>
+<tr>
+<td><strong>Rize Passport</strong></td>
+<td>Proposed insight-to-action layer: observed demand → readiness verdict → route → licences and product rules → destination economics.</td>
+<td>It can sit upstream of and connect into payment, tax and adviser ecosystems rather than replacing every provider.</td>
+</tr>
+</tbody>
+</table>
+<p>The differentiation is not “we also move money.” Passport’s position is: <strong>Razorpay can help a merchant decide whether and how to enter a market because it can connect payment intent with verified merchant and product context.</strong> Competitors are potential rails or partners as much as competitors.</p>
+<h2>4. The commercial use case for Razorpay Rize</h2>
+<p>Rize is a credible launch surface because its public site already positions the programme around early-stage founders, D2C businesses and global exports. It reports <strong>1,500+ founders in its community and 20,000+ company registrations facilitated</strong>; these are company-reported reach figures, not active or export-eligible merchant counts.<a href="https://razorpay.com/rize/rize">[13]</a></p>
+<p>Passport can create value for Razorpay in four ways:</p>
+<ol>
+<li><strong>Acquire international-payments merchants earlier.</strong> Radar turns failed or unserved international intent into a qualified expansion conversation.</li>
+<li><strong>Increase activation.</strong> A merchant that understands its route, requirements and price has fewer reasons to abandon international-payment enablement midway.</li>
+<li><strong>Grow processed volume.</strong> Passport revenue is secondary to the larger opportunity: helping more Rize merchants become international-payment merchants.</li>
+<li><strong>Build a partner layer.</strong> Verified CAs, company secretaries, customs brokers, testing labs and tax advisers could eventually become a curated referral network—only after proper vetting and commercial design.</li>
+</ol>
+<h3>Directional three-year annualised scenario</h3>
+<p>The model below is deliberately simple. It does not use private Razorpay data. “Eligible merchants” is a planning pool, “activation” means at least one live cross-border transaction, and annual GMV is per activated merchant.</p>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th style="text-align: right;">Eligible merchants</th>
+<th style="text-align: right;">Activation</th>
+<th style="text-align: right;">Activated merchants</th>
+<th style="text-align: right;">Annual cross-border GMV per merchant</th>
+<th style="text-align: right;">Passport-enabled GMV</th>
+<th style="text-align: right;">Illustrative processing revenue at 3%*</th>
+<th style="text-align: right;">Illustrative incremental Passport economics</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Low</strong></td>
+<td style="text-align: right;">2,000</td>
+<td style="text-align: right;">10%</td>
+<td style="text-align: right;">200</td>
+<td style="text-align: right;">₹5 lakh</td>
+<td style="text-align: right;"><strong>₹10 crore</strong></td>
+<td style="text-align: right;"><strong>₹30 lakh</strong></td>
+<td style="text-align: right;"><strong>₹2.5 lakh</strong> at 0.25%</td>
+</tr>
+<tr>
+<td><strong>Base</strong></td>
+<td style="text-align: right;">5,000</td>
+<td style="text-align: right;">20%</td>
+<td style="text-align: right;">1,000</td>
+<td style="text-align: right;">₹15 lakh</td>
+<td style="text-align: right;"><strong>₹150 crore</strong></td>
+<td style="text-align: right;"><strong>₹4.5 crore</strong></td>
+<td style="text-align: right;"><strong>₹75 lakh</strong> at 0.50%</td>
+</tr>
+<tr>
+<td><strong>High</strong></td>
+<td style="text-align: right;">10,000</td>
+<td style="text-align: right;">30%</td>
+<td style="text-align: right;">3,000</td>
+<td style="text-align: right;">₹30 lakh</td>
+<td style="text-align: right;"><strong>₹900 crore</strong></td>
+<td style="text-align: right;"><strong>₹27 crore</strong></td>
+<td style="text-align: right;"><strong>₹6.75 crore</strong> at 0.75%</td>
+</tr>
+</tbody>
+</table>
+<p>*The 3% is a directional modelling assumption aligned with publicly visible international-card price signals, not a quote, margin or guaranteed Razorpay rate. Razorpay’s main public pricing page advertises headline payment pricing and custom plans for larger merchants; actual international pricing varies by method, eligibility, contract, GST, FX and risk.<a href="https://razorpay.com/pricing">[14]</a> Processing revenue must not be added to Passport economics if Passport is bundled into that rate, and neither number represents contribution profit.</p>
+<p>A subscription alternative is also testable. At 1,000 activated merchants paying an illustrative ₹3,000 per year, Passport would produce <strong>₹30 lakh in annual fee revenue</strong>. The stronger base-case value, however, is the potential <strong>₹150 crore of Passport-enabled annual cross-border GMV</strong> and the merchant relationship that comes with it.</p>
+<h3>What Razorpay should test first</h3>
+<p>A responsible pilot would start with <strong>100–200 Rize D2C/Xport+ merchants</strong> in two categories and two destinations. Success should be measured through:</p>
+<ul>
+<li>consent rate for using KYC and payment signals;</li>
+<li>percentage of merchants receiving a clear GO or WAIT decision;</li>
+<li>international-payments activation after a GO decision;</li>
+<li>time from diagnosis to first successful foreign payment;</li>
+<li>payment volume and repeat rate after 90 days;</li>
+<li>readiness-gate failure reasons;</li>
+<li>merchant willingness to pay for Passport or accept a bundled rate;</li>
+<li>adviser referral completion and quality, if a partner layer is tested.</li>
+</ul>
+<p>RBI’s PA-CB framework requires authorisation, merchant due diligence, risk management and controls around prohibited goods and cross-border collection/settlement.<a href="https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=12561">[15]</a> That makes the staged approach essential. Passport Direct can be piloted as decision support around existing regulated flows. Passport Managed should remain a proposed future model until legal structure, destination coverage, liability, tax, refunds, disputes and commercial ownership are formally validated.</p>
+<h2>Closing</h2>
+<p>Akansha does not need another dashboard telling her that global e-commerce is large. She needs an answer to a much more practical question:</p>
+<blockquote>
+<p><em>“For my sarees, with my current business and the demand I am already seeing, which market should I enter—and what exactly do I need to do next?”</em></p>
+</blockquote>
+<p>That is what Passport is designed to answer.</p>
+<p>Radar converts payment noise into a market decision. Launch Plan converts that decision into a route, a compliance path and viable economics. Together, they let Razorpay Rize move from supporting founders at incorporation to supporting them at international expansion.</p>
+<p><strong>Passport is not a promise that every Indian business is ready to go global. It is a system for showing the right businesses when they are ready, why they are ready, and how to proceed.</strong></p>
+<h2>Important limitations</h2>
+<p>This prototype uses illustrative merchant scenarios, service-fee assumptions and provider names. It is not legal, tax or customs advice. Public market data does not provide a clean count of active Indian e-commerce exporters, active Rize export-ready merchants, Passport activation or per-merchant cross-border GMV. The market funnel and commercial scenarios must therefore be validated through a cohort pilot. Passport Managed is a product hypothesis, not a currently published Razorpay service or price.</p>
+<h2>Sources</h2>
+<ol>
+<li><a href="https://www.commerce.gov.in/files/2025-08/Commerce_AR-2024-25-English-1.pdf">Department of Commerce Annual Report 2024-25</a> — February 2025; Tier 1.</li>
+<li><a href="https://msme.gov.in/static/uploads/2025/06/cdd1fa9e3553498f59e6fef26bcc34b4.pdf">Ministry of MSME Annual Report 2024-25</a> — 2025; Tier 1.</li>
+<li><a href="https://content.dgft.gov.in/Website/EcommExportHandbokMSME_E.pdf">E-Commerce Exports Handbook for MSMEs</a> — January 2023; Tier 1.</li>
+<li><a href="https://www.wto.org/english/res_e/booksp_e/trade-costs-incl-growth_full_e.pdf">Trade Costs and Inclusive Growth</a> — 2016; Tier 1.</li>
+<li><a href="https://ficci.in/public/storage/SPDocument/23826/gDgHYdVQZUEeikm2MEJ0B8x3z8pqjOjWlYMUyc8d.pdf">FICCI Report on SMEs in India</a> — September 2023; Tier 2.</li>
+<li><a href="https://www.ey.com/content/dam/ey-unified-site/ey-com/en-in/newsroom/2024/07/ey-enabling-e-commerce-exports-from-india.pdf">Enabling e-commerce exports from India</a> — July 2024; Tier 2.</li>
+<li><a href="https://www.commerce.gov.in/files/d-m-y/PIB2149736.pdf">Government measures to promote exports</a> — 29 July 2025; Tier 1.</li>
+<li><a href="https://www.skydo.com/features/receive-cross-border-payments">Skydo Receive Cross-Border Payments</a> — Undated; accessed 19 September 2026; Tier 3.</li>
+<li><a href="https://docs.stripe.com/india-accept-international-payments?locale=en-GB">Stripe India international payments documentation</a> — Undated; accessed 19 September 2026; Tier 3.</li>
+<li><a href="https://stripe.com/in/global">Stripe global availability – India</a> — Undated; accessed 19 September 2026; Tier 3.</li>
+<li><a href="https://www.airwallex.com/en-uk/ppc/cross-border-payments">Airwallex cross-border payments</a> — Undated; accessed 19 September 2026; Tier 3.</li>
+<li><a href="https://www.airwallex.com/en-fr/business-account/global-accounts">Airwallex Global Accounts</a> — Undated; accessed 19 September 2026; Tier 3.</li>
+<li><a href="https://razorpay.com/rize/rize">Razorpay Rize</a> — Undated; accessed 19 September 2026; Tier 3.</li>
+<li><a href="https://razorpay.com/pricing">Razorpay Payments Pricing</a> — Undated; accessed 19 September 2026; Tier 3.</li>
+<li><a href="https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=12561">RBI regulation of Payment Aggregator – Cross Border</a> — 31 October 2023; Tier 1.</li>
+</ol></body></html>

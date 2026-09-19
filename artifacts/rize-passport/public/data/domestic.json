@@ -1,0 +1,158 @@
+[
+  {
+    "month": "2025-10",
+    "gmv_inr": 2774810,
+    "orders": 1444,
+    "aov_inr": 1922,
+    "refund_rate": 0.0364,
+    "settlement_currency": "INR",
+    "gmv_by_hsn": {
+      "3304": 1997862,
+      "3305": 499465,
+      "3401": 277481
+    }
+  },
+  {
+    "month": "2025-11",
+    "gmv_inr": 2686927,
+    "orders": 1427,
+    "aov_inr": 1883,
+    "refund_rate": 0.0456,
+    "settlement_currency": "INR",
+    "gmv_by_hsn": {
+      "3304": 1934586,
+      "3305": 483646,
+      "3401": 268692
+    }
+  },
+  {
+    "month": "2025-12",
+    "gmv_inr": 2643469,
+    "orders": 1392,
+    "aov_inr": 1899,
+    "refund_rate": 0.0445,
+    "settlement_currency": "INR",
+    "gmv_by_hsn": {
+      "3304": 1903297,
+      "3305": 475824,
+      "3401": 264346
+    }
+  },
+  {
+    "month": "2026-01",
+    "gmv_inr": 2722099,
+    "orders": 1517,
+    "aov_inr": 1794,
+    "refund_rate": 0.0462,
+    "settlement_currency": "INR",
+    "gmv_by_hsn": {
+      "3304": 1959909,
+      "3305": 489977,
+      "3401": 272209
+    }
+  },
+  {
+    "month": "2026-02",
+    "gmv_inr": 2679036,
+    "orders": 1476,
+    "aov_inr": 1815,
+    "refund_rate": 0.0476,
+    "settlement_currency": "INR",
+    "gmv_by_hsn": {
+      "3304": 1928904,
+      "3305": 482226,
+      "3401": 267903
+    }
+  },
+  {
+    "month": "2026-03",
+    "gmv_inr": 3084608,
+    "orders": 1611,
+    "aov_inr": 1915,
+    "refund_rate": 0.0449,
+    "settlement_currency": "INR",
+    "gmv_by_hsn": {
+      "3304": 2220916,
+      "3305": 555229,
+      "3401": 308460
+    }
+  },
+  {
+    "month": "2026-04",
+    "gmv_inr": 2997448,
+    "orders": 1683,
+    "aov_inr": 1781,
+    "refund_rate": 0.0474,
+    "settlement_currency": "INR",
+    "gmv_by_hsn": {
+      "3304": 2158161,
+      "3305": 539540,
+      "3401": 299744
+    }
+  },
+  {
+    "month": "2026-05",
+    "gmv_inr": 3191300,
+    "orders": 1664,
+    "aov_inr": 1918,
+    "refund_rate": 0.039,
+    "settlement_currency": "INR",
+    "gmv_by_hsn": {
+      "3304": 2297736,
+      "3305": 574434,
+      "3401": 319130
+    }
+  },
+  {
+    "month": "2026-06",
+    "gmv_inr": 2896988,
+    "orders": 1619,
+    "aov_inr": 1789,
+    "refund_rate": 0.0412,
+    "settlement_currency": "INR",
+    "gmv_by_hsn": {
+      "3304": 2085831,
+      "3305": 521457,
+      "3401": 289698
+    }
+  },
+  {
+    "month": "2026-07",
+    "gmv_inr": 3176622,
+    "orders": 1725,
+    "aov_inr": 1842,
+    "refund_rate": 0.0467,
+    "settlement_currency": "INR",
+    "gmv_by_hsn": {
+      "3304": 2287167,
+      "3305": 571791,
+      "3401": 317662
+    }
+  },
+  {
+    "month": "2026-08",
+    "gmv_inr": 3210049,
+    "orders": 1759,
+    "aov_inr": 1825,
+    "refund_rate": 0.0401,
+    "settlement_currency": "INR",
+    "gmv_by_hsn": {
+      "3304": 2311233,
+      "3305": 577808,
+      "3401": 321004
+    }
+  },
+  {
+    "month": "2026-09",
+    "gmv_inr": 3037526,
+    "orders": 1674,
+    "aov_inr": 1815,
+    "refund_rate": 0.039,
+    "settlement_currency": "INR",
+    "gmv_by_hsn": {
+      "3304": 2187018,
+      "3305": 546754,
+      "3401": 303752
+    }
+  }
+]

@@ -1,0 +1,140 @@
+[
+  {
+    "month": "2025-10",
+    "meta_ads_usd_geo_targeted": 200.64,
+    "meta_ads_geos": [
+      "US",
+      "AE"
+    ],
+    "saas_usd": 291.75,
+    "overseas_contractor_usd": 0,
+    "notes": "USD outflow targeting foreign geographies is a pre-export signal"
+  },
+  {
+    "month": "2025-11",
+    "meta_ads_usd_geo_targeted": 407.96,
+    "meta_ads_geos": [
+      "US",
+      "AE"
+    ],
+    "saas_usd": 263.62,
+    "overseas_contractor_usd": 0,
+    "notes": "USD outflow targeting foreign geographies is a pre-export signal"
+  },
+  {
+    "month": "2025-12",
+    "meta_ads_usd_geo_targeted": 315.33,
+    "meta_ads_geos": [
+      "US",
+      "AE"
+    ],
+    "saas_usd": 288.43,
+    "overseas_contractor_usd": 0,
+    "notes": "USD outflow targeting foreign geographies is a pre-export signal"
+  },
+  {
+    "month": "2026-01",
+    "meta_ads_usd_geo_targeted": 523.24,
+    "meta_ads_geos": [
+      "US",
+      "AE"
+    ],
+    "saas_usd": 271.63,
+    "overseas_contractor_usd": 0,
+    "notes": "USD outflow targeting foreign geographies is a pre-export signal"
+  },
+  {
+    "month": "2026-02",
+    "meta_ads_usd_geo_targeted": 403.66,
+    "meta_ads_geos": [
+      "US",
+      "AE"
+    ],
+    "saas_usd": 283.8,
+    "overseas_contractor_usd": 0,
+    "notes": "USD outflow targeting foreign geographies is a pre-export signal"
+  },
+  {
+    "month": "2026-03",
+    "meta_ads_usd_geo_targeted": 394.54,
+    "meta_ads_geos": [
+      "US",
+      "AE"
+    ],
+    "saas_usd": 300.06,
+    "overseas_contractor_usd": 0,
+    "notes": "USD outflow targeting foreign geographies is a pre-export signal"
+  },
+  {
+    "month": "2026-04",
+    "meta_ads_usd_geo_targeted": 381.36,
+    "meta_ads_geos": [
+      "US",
+      "AE",
+      "GB"
+    ],
+    "saas_usd": 276.73,
+    "overseas_contractor_usd": 0,
+    "notes": "USD outflow targeting foreign geographies is a pre-export signal"
+  },
+  {
+    "month": "2026-05",
+    "meta_ads_usd_geo_targeted": 640.74,
+    "meta_ads_geos": [
+      "US",
+      "AE",
+      "GB"
+    ],
+    "saas_usd": 296.37,
+    "overseas_contractor_usd": 642.44,
+    "notes": "USD outflow targeting foreign geographies is a pre-export signal"
+  },
+  {
+    "month": "2026-06",
+    "meta_ads_usd_geo_targeted": 676.91,
+    "meta_ads_geos": [
+      "US",
+      "AE",
+      "GB"
+    ],
+    "saas_usd": 275.89,
+    "overseas_contractor_usd": 691.71,
+    "notes": "USD outflow targeting foreign geographies is a pre-export signal"
+  },
+  {
+    "month": "2026-07",
+    "meta_ads_usd_geo_targeted": 429.8,
+    "meta_ads_geos": [
+      "US",
+      "AE",
+      "GB"
+    ],
+    "saas_usd": 290.77,
+    "overseas_contractor_usd": 442.27,
+    "notes": "USD outflow targeting foreign geographies is a pre-export signal"
+  },
+  {
+    "month": "2026-08",
+    "meta_ads_usd_geo_targeted": 745.26,
+    "meta_ads_geos": [
+      "US",
+      "AE",
+      "GB"
+    ],
+    "saas_usd": 268.58,
+    "overseas_contractor_usd": 818.54,
+    "notes": "USD outflow targeting foreign geographies is a pre-export signal"
+  },
+  {
+    "month": "2026-09",
+    "meta_ads_usd_geo_targeted": 721.74,
+    "meta_ads_geos": [
+      "US",
+      "AE",
+      "GB"
+    ],
+    "saas_usd": 241.55,
+    "overseas_contractor_usd": 691.93,
+    "notes": "USD outflow targeting foreign geographies is a pre-export signal"
+  }
+]

@@ -1,0 +1,293 @@
+{
+  "_note": "Rize Passport reference data v2. HS code layer added. Hand-curated, not generated. Powers the verdict engine, Price Builder and Launch Plan. Figures marked source_verified are real as of Sep 2026; peer bands are illustrative for the demo.",
+
+  "hs_layer": {
+    "_why_this_matters": "HS code is the join key that makes everything else precise. A fuzzy category label like 'D2C personal care' has to be guessed. An HS code is a hard identifier that already exists in the merchant's paperwork, and it determines the peer cohort, the duty rate and the regulatory gate.",
+
+    "where_razorpay_gets_it": [
+      { "source": "GST invoice HSN", "detail": "Indian GST requires HSN on B2B invoices: 4 digits at turnover up to Rs 5cr, 6 digits above Rs 5cr. Razorpay Invoices, Payment Pages and POS line items carry it.", "available_without_any_export": true, "source_verified": true },
+      { "source": "Export shipping bill", "detail": "8-digit ITC-HS is mandatory on export and import transactions.", "available_without_any_export": false, "source_verified": true },
+      { "source": "eBRC and FIRA", "detail": "Export realisation documents carry the code.", "available_without_any_export": false },
+      { "source": "Marketplace catalogue", "detail": "Amazon Global Selling listings carry HS classification.", "available_without_any_export": false }
+    ],
+
+    "the_cold_start_unlock": "A merchant that has never sold a single unit abroad still has HSN codes on every GST invoice it has ever issued. So Rize Passport can show a WATCHING market a real peer benchmark on day zero, with no international signal at all. This is what turns the empty state from 'we are monitoring' into 'here is what brands selling your exact goods achieve in that market'.",
+
+    "the_digit_bridge": {
+      "merchant_has_today": "4-digit HSN (3304) because turnover is under Rs 5cr",
+      "export_requires": "8-digit ITC-HS (33049990) on the shipping bill",
+      "passport_role": "Map 4-digit to 8-digit, flag where the merchant's SKU mix splits across several 8-digit lines with different duty and different regulatory treatment. Most SMBs do not know this split exists until a shipment is held.",
+      "source_verified": true
+    }
+  },
+
+  "hs_catalogue": {
+    "3304.99": {
+      "description": "Beauty or make-up preparations and preparations for the care of the skin, other",
+      "itc_hs_8": "33049990",
+      "us_hts": "3304.99.50.00",
+      "merchant_skus": ["KN-SER-30", "KN-MOI-50", "KN-SUN-50"],
+      "share_of_revenue": 0.72,
+      "peer_benchmarks": {
+        "_note": "Illustrative for the demo. In production these come from the Razorpay exporter book, which covers 100,000+ exporters. A receiving-only competitor cannot build this because it only sees flows that already exist.",
+        "US": { "cohort_size": 214, "currency": "USD", "band": [38, 52], "median": 44, "best_converting": 49, "note": "Listings above USD 55 see a sharp conversion drop unless bundled." },
+        "AE": { "cohort_size": 96,  "currency": "AED", "band": [85, 140], "median": 110, "best_converting": 99 },
+        "GB": { "cohort_size": 61,  "currency": "GBP", "band": [29, 42], "median": 35, "best_converting": 34.99 },
+        "DE": { "cohort_size": 38,  "currency": "EUR", "band": [32, 46], "median": 39, "best_converting": 39.99 }
+      },
+      "duty": {
+        "US": { "mfn_base": "Free", "note": "The MFN base rate for this line is Free, but additional measures on Indian-origin goods have moved repeatedly through 2025-26. Rize Passport pulls the live stack rather than storing a number, and alerts when it changes.", "demo_assumption_pct": 0.065, "source_verified_base_rate": true, "rate_is_volatile": true },
+        "AE": { "rate_pct": 0.05, "note": "GCC common external tariff." },
+        "GB": { "rate_pct": 0.04 },
+        "DE": { "rate_pct": 0.045, "note": "EU abolished its EUR 150 duty-free threshold on 1 July 2026.", "source_verified": true }
+      },
+      "regulatory_gates": {
+        "US": {
+          "status": "ACTION_REQUIRED",
+          "requirement": "MoCRA facility registration and product listing with the FDA. Applies to foreign manufacturers and brands selling into the US.",
+          "blocks_launch": true,
+          "lead_time_weeks": 4,
+          "partner_track": "US cosmetics regulatory consultant",
+          "source_verified": true
+        },
+        "DE": {
+          "status": "ACTION_REQUIRED",
+          "requirement": "CPNP notification plus an EU-based Responsible Person before any unit is placed on the market.",
+          "blocks_launch": true,
+          "lead_time_weeks": 6,
+          "partner_track": "EU Responsible Person service"
+        },
+        "GB": { "status": "ACTION_REQUIRED", "requirement": "SCPN notification plus a UK Responsible Person.", "blocks_launch": true, "lead_time_weeks": 5 },
+        "AE": { "status": "ACTION_REQUIRED", "requirement": "Product registration with the relevant UAE authority before import.", "blocks_launch": true, "lead_time_weeks": 3 }
+      },
+      "sku_level_exception": {
+        "sku": "KN-SUN-50",
+        "name": "Mineral Sunscreen SPF50",
+        "headline": "Same HS code. Completely different regulator.",
+        "detail": "For tariff purposes sunscreen sits in 3304.99 alongside the serum and the moisturiser. For FDA purposes sunscreen is an over-the-counter DRUG, not a cosmetic. It needs monograph compliance, an NDC and a Drug Facts label. MoCRA registration does not cover it.",
+        "verdict": "BLOCKED",
+        "recommendation": "Launch the US with the serum and the moisturiser. Hold the sunscreen. It is 16% of revenue and roughly 6 months of separate regulatory work.",
+        "why_this_is_the_demo_beat": "One SKU inside the same HS heading creates a hard blocker that has nothing to do with demand or margin. No payments product would be expected to know this, and it is exactly the trap that kills an SMB's first US shipment."
+      }
+    },
+
+    "3305.90": {
+      "description": "Preparations for use on the hair, other",
+      "itc_hs_8": "33059019",
+      "merchant_skus": ["KN-HRO-100"],
+      "share_of_revenue": 0.18,
+      "peer_benchmarks": {
+        "US": { "cohort_size": 143, "currency": "USD", "band": [16, 28], "median": 21, "best_converting": 19 },
+        "AE": { "cohort_size": 88,  "currency": "AED", "band": [45, 79], "median": 59, "best_converting": 55 },
+        "GB": { "cohort_size": 44,  "currency": "GBP", "band": [12, 22], "median": 17, "best_converting": 16.99 }
+      },
+      "duty": { "US": { "mfn_base": "Free", "demo_assumption_pct": 0.065 }, "AE": { "rate_pct": 0.05 }, "GB": { "rate_pct": 0.04 } },
+      "regulatory_gates": {
+        "US": { "status": "ACTION_REQUIRED", "requirement": "MoCRA facility registration and product listing.", "blocks_launch": true, "lead_time_weeks": 4 }
+      },
+      "note": "Hair oil carries a much lower peer band than skincare. Pricing this off the skincare benchmark would overprice it by roughly 2x. This is why the benchmark must be keyed on HS code, not on a single category label for the whole business."
+    },
+
+    "3401.11": {
+      "description": "Soap and organic surface-active products in bars, for toilet use",
+      "itc_hs_8": "34011190",
+      "merchant_skus": ["KN-SOP-100"],
+      "share_of_revenue": 0.10,
+      "peer_benchmarks": {
+        "US": { "cohort_size": 176, "currency": "USD", "band": [7, 14], "median": 10, "best_converting": 9 },
+        "AE": { "cohort_size": 71,  "currency": "AED", "band": [22, 42], "median": 32, "best_converting": 29 },
+        "GB": { "cohort_size": 52,  "currency": "GBP", "band": [5, 11], "median": 8, "best_converting": 7.99 }
+      },
+      "duty": { "US": { "mfn_base": "Free", "demo_assumption_pct": 0.065 }, "AE": { "rate_pct": 0.05 }, "GB": { "rate_pct": 0.04 } },
+      "regulatory_gates": {
+        "US": { "status": "CONDITIONAL", "requirement": "Treated as a cosmetic and needs MoCRA registration only where it carries cosmetic claims. A plain cleansing bar making no cosmetic claim falls outside the definition of a cosmetic.", "blocks_launch": false }
+      },
+      "note": "Low unit value and heavy for its price. At a USD 9 peer median it cannot absorb outbound shipping on its own. Recommend bundling rather than listing standalone."
+    }
+  },
+
+  "verdict_rules": {
+    "explanation": "Verdict = Demand x Readiness x Regulatory. Demand is observed from payment attempts. Readiness is computed from merchant economics. Regulatory is a per-HS-code gate. Any of the three can veto.",
+    "demand_thresholds": {
+      "GO": { "min_attempts_12m": 100, "min_leaked_inr": 500000, "min_repeat_rate": 0.25 },
+      "WAIT": { "min_attempts_12m": 25, "min_leaked_inr": 100000 },
+      "WATCHING": { "description": "Below WAIT thresholds. Show monitoring state plus the HS-matched peer benchmark, never a recommendation." }
+    },
+    "readiness_checks": [
+      { "id": "margin_headroom", "rule": "gross_margin - all_in_payment_cost - est_logistics_pct - hs_duty_pct > 0.18", "fail_message": "Margin cannot absorb cross-border cost at current AOV." },
+      { "id": "aov_floor", "rule": "attempted_aov_inr > 2800", "fail_message": "AOV too low to carry duty and shipping post de-minimis." },
+      { "id": "odi_headroom", "rule": "entity_cost_inr < net_worth_inr * 4.0", "fail_message": "Entity cost exceeds the 400% of net worth ODI ceiling." },
+      { "id": "ops_capacity", "rule": "domestic_refund_rate < 0.06", "fail_message": "Domestic ops quality not yet stable enough to add a market." }
+    ],
+    "regulatory_check": {
+      "rule": "For each HS code in the market's hs_mix, look up hs_catalogue[hs].regulatory_gates[market]. If blocks_launch is true and status is not cleared, that HS code is BLOCKED for that market.",
+      "partial_launch_rule": "If some HS codes clear and others do not, the market verdict stays GO but the launch scope is reduced to the clearing codes. Show the excluded revenue share explicitly.",
+      "example": "US is GO. 3304.99 clears after 4 weeks of MoCRA work. The sunscreen SKU inside 3304.99 is BLOCKED as an FDA drug. Launch scope = 56% of revenue, not 72%."
+    },
+    "refusal_copy": "Rize Passport will tell you not to expand. A WAIT verdict names the single number that has to move, and we alert you the day it does."
+  },
+
+  "markets": {
+    "US": {
+      "name": "United States", "currency": "USD", "fx_rate_inr": 88.4,
+      "tax_model": "exclusive",
+      "tax_note": "Prices are quoted BEFORE sales tax. Sales tax is added at checkout and varies by state.",
+      "nexus_rule": "Economic nexus commonly triggers at USD 100,000 in sales or 200 transactions into a single state.",
+      "nexus_triggered": false,
+      "duty_status": "de_minimis_suspended",
+      "duty_note": "The USD 800 de minimis exemption is suspended. CBP moved the suspension into regulation on 24 June 2026 and it is legislated to end permanently on 1 July 2027. Every commercial parcel now needs formal or informal entry and pays duty at its HS rate.",
+      "duty_note_source_verified": true,
+      "recommended_incoterm": "DDP",
+      "incoterm_reason": "Duty billed at the door after de-minimis suspension is the single biggest cause of refused delivery.",
+      "payment_mix": [
+        { "method": "Card", "share": 0.62 },
+        { "method": "Apple Pay / Google Pay", "share": 0.23 },
+        { "method": "PayPal", "share": 0.11 },
+        { "method": "Buy now pay later", "share": 0.04 }
+      ],
+      "all_in_payment_cost_pct": 0.061,
+      "price_psychology": "charm_9",
+      "entity": {
+        "recommended": "Delaware C-Corp", "setup_cost_usd": 800, "annual_cost_usd": 1400,
+        "timeline_weeks": 3, "needed_now": false,
+        "needed_when": "Only when a US buyer requires a domestic entity, a marketplace demands it, or local acquiring economics beat 6.1% cross-border cost."
+      }
+    },
+    "AE": {
+      "name": "United Arab Emirates", "currency": "AED", "fx_rate_inr": 24.07,
+      "tax_model": "inclusive",
+      "tax_note": "VAT at 5% must be included in the displayed consumer price.",
+      "nexus_rule": "VAT registration mandatory above AED 375,000 of taxable supplies.",
+      "nexus_triggered": false,
+      "duty_status": "standard",
+      "recommended_incoterm": "DDP",
+      "payment_mix": [
+        { "method": "Card", "share": 0.54 },
+        { "method": "Cash on delivery", "share": 0.28 },
+        { "method": "Apple Pay", "share": 0.12 },
+        { "method": "Tabby / Tamara BNPL", "share": 0.06 }
+      ],
+      "all_in_payment_cost_pct": 0.058,
+      "price_psychology": "round",
+      "entity": { "recommended": "Dubai free zone FZ-LLC", "setup_cost_usd": 4200, "annual_cost_usd": 3100, "timeline_weeks": 5, "needed_now": false }
+    },
+    "GB": {
+      "name": "United Kingdom", "currency": "GBP", "fx_rate_inr": 118.2,
+      "tax_model": "inclusive",
+      "tax_note": "VAT at 20% must be included in the displayed consumer price. This is the single most common pricing mistake Indian sellers make.",
+      "nexus_rule": "UK VAT registration required for overseas sellers of goods below GBP 135 sold direct to consumers, from the first sale.",
+      "nexus_triggered": true,
+      "duty_status": "standard",
+      "recommended_incoterm": "DDP",
+      "payment_mix": [
+        { "method": "Card", "share": 0.58 },
+        { "method": "Apple Pay / Google Pay", "share": 0.21 },
+        { "method": "PayPal", "share": 0.14 },
+        { "method": "Klarna BNPL", "share": 0.07 }
+      ],
+      "all_in_payment_cost_pct": 0.059,
+      "price_psychology": "charm_99",
+      "entity": { "recommended": "UK Private Limited", "setup_cost_usd": 600, "annual_cost_usd": 1100, "timeline_weeks": 2, "needed_now": false }
+    },
+    "DE": {
+      "name": "Germany", "currency": "EUR", "fx_rate_inr": 96.1,
+      "tax_model": "inclusive",
+      "tax_note": "VAT at 19% must be included in the displayed price. The EU abolished its EUR 150 duty-free threshold on 1 July 2026.",
+      "tax_note_source_verified": true,
+      "nexus_rule": "IOSS registration recommended for consignments to EU consumers.",
+      "nexus_triggered": false,
+      "duty_status": "de_minimis_removed",
+      "recommended_incoterm": "DDP",
+      "payment_mix": [
+        { "method": "Card", "share": 0.31 },
+        { "method": "PayPal", "share": 0.29 },
+        { "method": "Direct debit / SEPA", "share": 0.22 },
+        { "method": "Klarna invoice", "share": 0.18 }
+      ],
+      "all_in_payment_cost_pct": 0.057,
+      "price_psychology": "charm_99",
+      "entity": { "recommended": "GmbH", "setup_cost_usd": 3800, "annual_cost_usd": 4200, "timeline_weeks": 7, "needed_now": false }
+    }
+  },
+
+  "price_builder_example": {
+    "market": "US",
+    "hs_6": "3304.99",
+    "sku": "KN-SER-30",
+    "sku_name": "Vitamin C Face Serum 30ml",
+    "_note": "Price Builder now runs PER HS CODE, not per business. The serum, the hair oil and the soap get three different recommendations because they sit in three different HS headings with three different peer bands.",
+    "cost_floor_usd": 41.2,
+    "cost_floor_breakdown": [
+      { "component": "Product cost", "usd": 19.9 },
+      { "component": "Outbound shipping", "usd": 11.4 },
+      { "component": "Import duty at HS 3304.99 rate", "usd": 2.9 },
+      { "component": "Payment cost at 6.1%", "usd": 3.1 },
+      { "component": "Returns and chargeback provision", "usd": 3.9 }
+    ],
+    "observed_willingness_to_pay_usd": 47.7,
+    "observed_wtp_evidence": "Highest cart a US buyer actually attempted was Rs 4,217 average, Rs 6,150 peak. Not a survey. Real intent.",
+    "peer_band_usd": [38, 52],
+    "peer_band_source": "214 Indian exporters shipping HS 3304.99 to the US",
+    "recommended_list_usd": 49,
+    "recommended_reason": "Above cost floor, inside the HS 3304.99 peer band, charm-priced, below the USD 55 conversion cliff.",
+    "margin_at_recommended": 0.159,
+    "fx_guardrail_inr_per_usd": 84.0,
+    "fx_guardrail_note": "Margin turns negative below Rs 84 per USD. Rize Passport watches the rate and alerts you.",
+    "contrast_row": {
+      "sku": "KN-HRO-100", "hs_6": "3305.90", "peer_band_usd": [16, 28], "recommended_list_usd": 19,
+      "point": "Same business, same market, a completely different price. Price off the business category and you overprice the hair oil by more than 2x."
+    }
+  },
+
+  "odi_timeline": {
+    "_note": "India-side compliance clock. Starts at first outbound remittance, not at incorporation.",
+    "source_verified": true,
+    "steps": [
+      { "step": 1, "task": "Board resolution approving overseas investment", "owner": "Merchant", "when": "Before remittance", "status": "not_started" },
+      { "step": 2, "task": "Confirm financial commitment within 400% of net worth", "owner": "Rize Passport", "when": "Before remittance", "status": "done", "detail": "Net worth Rs 1.1cr. Ceiling Rs 4.4cr. Delaware setup at Rs 0.71L is well inside." },
+      { "step": 3, "task": "Open ODI file with AD Category-I bank", "owner": "Partner - AD bank", "when": "Before remittance", "status": "not_started" },
+      { "step": 4, "task": "File Form FC with AD bank", "owner": "Partner - CA", "when": "Within 30 days of remittance", "status": "blocked", "penalty": "Late Submission Fee from Rs 7,500 plus 0.025% of amount per year of delay" },
+      { "step": 5, "task": "Obtain UIN from RBI", "owner": "Partner - AD bank", "when": "After Form FC", "status": "not_started" },
+      { "step": 6, "task": "Annual Performance Report on audited accounts", "owner": "Partner - CA", "when": "By 31 December each year", "status": "recurring" }
+    ],
+    "warnings": [
+      "More than two layers of foreign subsidiaries is not permitted under Rule 19(3).",
+      "ODI into a foreign startup must come from internal accruals, not borrowed funds.",
+      "A resident individual cannot take control of a foreign entity that later sets up a step-down subsidiary."
+    ]
+  },
+
+  "partners": {
+    "_note": "Razorpay brokers, does not build. Ecosystem play. Named partners are the credibility.",
+    "categories": [
+      { "track": "Incorporation", "partners": ["US incorporation agent", "Free zone authority agent, Dubai"], "razorpay_role": "Referral and orchestration" },
+      { "track": "India compliance", "partners": ["AD Category-I bank", "FEMA specialist CA"], "razorpay_role": "Trigger, tracking and deadline chasing" },
+      { "track": "Product regulatory", "partners": ["US cosmetics regulatory consultant (MoCRA)", "EU Responsible Person service (CPNP)"], "razorpay_role": "Gate detection from the HS code. Razorpay knows the code, so it knows which gate applies before the merchant does." },
+      { "track": "Customs and classification", "partners": ["Licensed customs broker"], "razorpay_role": "4-digit HSN to 8-digit ITC-HS bridge, landed-cost input to Price Builder" },
+      { "track": "Tax registration", "partners": ["Sales tax nexus provider, US", "IOSS intermediary, EU"], "razorpay_role": "Threshold monitoring from transaction data" },
+      { "track": "Logistics", "partners": ["DDP-capable cross-border 3PL"], "razorpay_role": "Landed-cost input to Price Builder" },
+      { "track": "Hiring", "partners": ["Employer of record"], "razorpay_role": "Referral. Aspire brokers this through Deel rather than building it." },
+      { "track": "Money in and out", "partners": [], "razorpay_role": "BUILT. International Payments under the PA-CB licence, multi-currency EEFC account, RazorpayX payouts. This is the monetisation." }
+    ]
+  },
+
+  "packaging": {
+    "_note": "Airwallex lesson: tiers sell seats, workflows and support, never cheaper rails. Aspire lesson: subscription is prepaid fee relief. Atlas lesson: incorporation is the hook, not the revenue.",
+    "tiers": [
+      { "name": "Radar", "price": "Free, always on", "includes": ["Signal monitoring across 6 indicators", "HS-matched peer benchmark from day zero", "Verdict per market", "Alerts when a WAIT flips to GO"], "logic": "Wedge and retention. A receiving-only competitor cannot see this data." },
+      { "name": "Launch Pack", "price": "One-off flat fee", "includes": ["Entity via partner", "Bank account and EIN", "ODI filing orchestration", "HS classification and regulatory gate clearance", "Compliance calendar"], "logic": "Priced near cost. Creates a lifetime cross-border payments account." },
+      { "name": "Modules", "price": "Monthly, on and off", "includes": ["Price Builder per HS code", "Compliance autopilot", "Tax registration monitoring", "Local acquiring", "EOR"], "logic": "Modular so a business can upgrade or downgrade as the market matures." }
+    ],
+    "rails_note": "Cross-border acceptance, EEFC and payouts are priced identically on every tier. Never gate the rails.",
+    "revenue_truth": "Real money is incremental cross-border TPV. Subscription exists to qualify and commit, not to earn margin."
+  },
+
+  "competitive": {
+    "skydo": {
+      "what_they_do": "Cheaper, cleaner receiving rail. Flat fee, zero FX markup at mid-market, auto FIRA and eBRC.",
+      "verified_facts": ["Final RBI PA-CB authorisation 9 Jan 2026", "30,000+ MSMEs across 50+ cities", "32+ currencies", "USD 19 up to 2k, USD 29 to 10k, 0.30% above", "Series A led by Susquehanna Asia"],
+      "structural_gap": "Skydo only sees money already arriving from abroad. It has no pre-export signal and no domestic GST invoice line items, so it can see neither when to expand nor what the merchant actually sells. Both answers sit with whoever holds the domestic book."
+    },
+    "positioning_line": "Skydo helps you get paid better once you are global. Rize Passport tells you when to go global, what to charge, and what will stop you at the border."
+  }
+}

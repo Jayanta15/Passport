@@ -1,0 +1,44 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "zow24ssgJIk9FkldJs1zL"
+uri = "file://research/notes.md"
+type = "text"
+title = "Research Notes: Rize Passport"
+description = "Research plan and running evidence log for the judge write-up."
+logical_id = "98423af9-6eb2-4f39-9a64-54d6008f4a37"
+content_hash = "sha256:570371f2727a67e5f0e9c3a08c427b3546b29861e514e7158ae7fbff92864a91"
+size = 1855
+mtime_ms = 1789813796834
+storage_uri = "gcs://replit-rams-assets-pike/rams/assets/repl:f6031087-7e52-4b8d-b05e-63550d5a6cb1/98423af9-6eb2-4f39-9a64-54d6008f4a37/feb0456f-dec0-41cf-9591-066d4bd7d623"
+storage_version_token = "1789813798046987"
+content_type = "text/markdown"
+
+[[outputs]]
+id = "O7SMp0TZb60avoP1Jag8D"
+uri = "file://research/rize-passport-judge-writeup.pdf"
+type = "pdf"
+title = "Rize Passport — Judge Write-up (PDF)"
+description = "Seven-page judge-ready narrative covering the problem, product, market, competitors, and Razorpay commercial case."
+logical_id = "7ff804e7-30aa-425e-a3e7-129b7b05a756"
+content_hash = "sha256:b8d4b552026ed59ab997747a80f8e2e8d042bdc4a7cf360c6b3b6d9b1ae963c3"
+size = 45594
+mtime_ms = 1789814745891
+storage_uri = "gcs://replit-rams-assets-pike/rams/assets/repl:f6031087-7e52-4b8d-b05e-63550d5a6cb1/7ff804e7-30aa-425e-a3e7-129b7b05a756/c399bef4-b21d-4067-84ab-3b4cdab3991d"
+storage_version_token = "1789814755872738"
+content_type = "application/pdf"
+
+[[outputs]]
+id = "ZrWzkwsP92apWnsrnao1X"
+uri = "file://research/rize-passport-judge-writeup.docx"
+type = "word_document"
+title = "Rize Passport — Judge Write-up (Editable)"
+description = "Editable Word version for final tailoring before submission."
+logical_id = "667649ab-db89-4543-bde3-7df556b35924"
+content_hash = "sha256:217dfd5cdb0d0d81bfe6d6ba2ea9afbaff512f4d2d0eb180c4e0f356270732bb"
+size = 20550
+mtime_ms = 1789814746219
+storage_uri = "gcs://replit-rams-assets-pike/rams/assets/repl:f6031087-7e52-4b8d-b05e-63550d5a6cb1/667649ab-db89-4543-bde3-7df556b35924/975fd857-1d86-4aa7-88ff-f54edf218417"
+storage_version_token = "1789814757245297"
+content_type = "application/vnd.openxmlformats-officedocument.wordprocessingml.document"

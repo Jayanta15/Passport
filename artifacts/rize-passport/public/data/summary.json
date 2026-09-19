@@ -1,0 +1,366 @@
+{
+  "merchant": {
+    "name": "Kaya Naturals",
+    "city": "Bengaluru",
+    "category": "D2C personal care",
+    "annual_revenue_inr": 35100882,
+    "net_worth_inr": 11000000,
+    "gross_margin": 0.58,
+    "international_payments_enabled_from": "2026-06",
+    "gst_hsn_reporting_digits": 4,
+    "gst_hsn_reporting_note": "Turnover of Rs 4.2cr sits under the Rs 5cr threshold, so GST invoices carry 4-digit HSN. Export shipping bills require 8 digits. Rize Passport bridges that."
+  },
+  "headline": {
+    "leaked_inr": 1947250,
+    "leaked_display": "Rs 19.5L",
+    "total_attempts": 803,
+    "declined": 579,
+    "decline_rate": 0.721,
+    "countries": 9,
+    "domestic_aov_inr": 1848
+  },
+  "hsn_profile": [
+    {
+      "hsn_4": "3304",
+      "hs_6": "3304.99",
+      "itc_hs_8": "33049990",
+      "domestic_gmv_inr": 25272634,
+      "skus": [
+        {
+          "sku": "KN-SER-30",
+          "name": "Vitamin C Face Serum 30ml",
+          "mrp_inr": 1450
+        },
+        {
+          "sku": "KN-MOI-50",
+          "name": "Ceramide Moisturiser 50g",
+          "mrp_inr": 1150
+        },
+        {
+          "sku": "KN-SUN-50",
+          "name": "Mineral Sunscreen SPF50 50g",
+          "mrp_inr": 950
+        }
+      ],
+      "share_of_revenue": 0.72
+    },
+    {
+      "hsn_4": "3305",
+      "hs_6": "3305.90",
+      "itc_hs_8": "33059019",
+      "domestic_gmv_inr": 6318158,
+      "skus": [
+        {
+          "sku": "KN-HRO-100",
+          "name": "Rosemary Hair Oil 100ml",
+          "mrp_inr": 720
+        }
+      ],
+      "share_of_revenue": 0.18
+    },
+    {
+      "hsn_4": "3401",
+      "hs_6": "3401.11",
+      "itc_hs_8": "34011190",
+      "domestic_gmv_inr": 3510088,
+      "skus": [
+        {
+          "sku": "KN-SOP-100",
+          "name": "Neem Cleansing Bar 100g",
+          "mrp_inr": 320
+        }
+      ],
+      "share_of_revenue": 0.1
+    }
+  ],
+  "by_country": [
+    {
+      "country": "US",
+      "country_name": "United States",
+      "attempts": 398,
+      "declined": 280,
+      "decline_rate": 0.7035,
+      "leaked_inr": 1189100,
+      "captured_inr": 489450,
+      "attempted_aov_inr": 4217,
+      "max_accepted_cart_inr": 7300,
+      "unique_buyers": 184,
+      "repeat_buyers": 125,
+      "repeat_rate": 0.6793,
+      "hs_mix": [
+        {
+          "hs_6": "3304.99",
+          "value_inr": 1281850,
+          "share": 0.8294
+        },
+        {
+          "hs_6": "3305.90",
+          "value_inr": 207360,
+          "share": 0.1342
+        },
+        {
+          "hs_6": "3401.11",
+          "value_inr": 56320,
+          "share": 0.0364
+        }
+      ],
+      "dominant_hs_6": "3304.99"
+    },
+    {
+      "country": "AE",
+      "country_name": "United Arab Emirates",
+      "attempts": 228,
+      "declined": 172,
+      "decline_rate": 0.7544,
+      "leaked_inr": 366300,
+      "captured_inr": 115550,
+      "attempted_aov_inr": 2113,
+      "max_accepted_cart_inr": 3250,
+      "unique_buyers": 107,
+      "repeat_buyers": 71,
+      "repeat_rate": 0.6636,
+      "hs_mix": [
+        {
+          "hs_6": "3304.99",
+          "value_inr": 369050,
+          "share": 0.7977
+        },
+        {
+          "hs_6": "3305.90",
+          "value_inr": 73440,
+          "share": 0.1587
+        },
+        {
+          "hs_6": "3401.11",
+          "value_inr": 20160,
+          "share": 0.0436
+        }
+      ],
+      "dominant_hs_6": "3304.99"
+    },
+    {
+      "country": "GB",
+      "country_name": "United Kingdom",
+      "attempts": 59,
+      "declined": 42,
+      "decline_rate": 0.7119,
+      "leaked_inr": 113100,
+      "captured_inr": 55050,
+      "attempted_aov_inr": 2850,
+      "max_accepted_cart_inr": 4300,
+      "unique_buyers": 28,
+      "repeat_buyers": 17,
+      "repeat_rate": 0.6071,
+      "hs_mix": [
+        {
+          "hs_6": "3304.99",
+          "value_inr": 138250,
+          "share": 0.8491
+        },
+        {
+          "hs_6": "3305.90",
+          "value_inr": 19440,
+          "share": 0.1194
+        },
+        {
+          "hs_6": "3401.11",
+          "value_inr": 5120,
+          "share": 0.0314
+        }
+      ],
+      "dominant_hs_6": "3304.99"
+    },
+    {
+      "country": "CA",
+      "country_name": "Canada",
+      "attempts": 34,
+      "declined": 22,
+      "decline_rate": 0.6471,
+      "leaked_inr": 70900,
+      "captured_inr": 47200,
+      "attempted_aov_inr": 3474,
+      "max_accepted_cart_inr": 4800,
+      "unique_buyers": 16,
+      "repeat_buyers": 10,
+      "repeat_rate": 0.625,
+      "hs_mix": [
+        {
+          "hs_6": "3304.99",
+          "value_inr": 93300,
+          "share": 0.8329
+        },
+        {
+          "hs_6": "3305.90",
+          "value_inr": 12960,
+          "share": 0.1157
+        },
+        {
+          "hs_6": "3401.11",
+          "value_inr": 5760,
+          "share": 0.0514
+        }
+      ],
+      "dominant_hs_6": "3304.99"
+    },
+    {
+      "country": "SG",
+      "country_name": "Singapore",
+      "attempts": 24,
+      "declined": 20,
+      "decline_rate": 0.8333,
+      "leaked_inr": 61450,
+      "captured_inr": 12600,
+      "attempted_aov_inr": 3085,
+      "max_accepted_cart_inr": 4650,
+      "unique_buyers": 9,
+      "repeat_buyers": 6,
+      "repeat_rate": 0.6667,
+      "hs_mix": [
+        {
+          "hs_6": "3304.99",
+          "value_inr": 61950,
+          "share": 0.8515
+        },
+        {
+          "hs_6": "3305.90",
+          "value_inr": 7920,
+          "share": 0.1089
+        },
+        {
+          "hs_6": "3401.11",
+          "value_inr": 2880,
+          "share": 0.0396
+        }
+      ],
+      "dominant_hs_6": "3304.99"
+    },
+    {
+      "country": "AU",
+      "country_name": "Australia",
+      "attempts": 25,
+      "declined": 16,
+      "decline_rate": 0.64,
+      "leaked_inr": 55950,
+      "captured_inr": 32250,
+      "attempted_aov_inr": 3528,
+      "max_accepted_cart_inr": 4800,
+      "unique_buyers": 14,
+      "repeat_buyers": 8,
+      "repeat_rate": 0.5714,
+      "hs_mix": [
+        {
+          "hs_6": "3304.99",
+          "value_inr": 72200,
+          "share": 0.8749
+        },
+        {
+          "hs_6": "3305.90",
+          "value_inr": 6480,
+          "share": 0.0785
+        },
+        {
+          "hs_6": "3401.11",
+          "value_inr": 3840,
+          "share": 0.0465
+        }
+      ],
+      "dominant_hs_6": "3304.99"
+    },
+    {
+      "country": "NL",
+      "country_name": "Netherlands",
+      "attempts": 12,
+      "declined": 10,
+      "decline_rate": 0.8333,
+      "leaked_inr": 31850,
+      "captured_inr": 6300,
+      "attempted_aov_inr": 3179,
+      "max_accepted_cart_inr": 4100,
+      "unique_buyers": 4,
+      "repeat_buyers": 4,
+      "repeat_rate": 1.0,
+      "hs_mix": [
+        {
+          "hs_6": "3304.99",
+          "value_inr": 28900,
+          "share": 0.8224
+        },
+        {
+          "hs_6": "3305.90",
+          "value_inr": 4320,
+          "share": 0.1229
+        },
+        {
+          "hs_6": "3401.11",
+          "value_inr": 1920,
+          "share": 0.0546
+        }
+      ],
+      "dominant_hs_6": "3304.99"
+    },
+    {
+      "country": "DE",
+      "country_name": "Germany",
+      "attempts": 12,
+      "declined": 9,
+      "decline_rate": 0.75,
+      "leaked_inr": 30350,
+      "captured_inr": 10900,
+      "attempted_aov_inr": 3438,
+      "max_accepted_cart_inr": 4900,
+      "unique_buyers": 5,
+      "repeat_buyers": 4,
+      "repeat_rate": 0.8,
+      "hs_mix": [
+        {
+          "hs_6": "3304.99",
+          "value_inr": 31150,
+          "share": 0.8476
+        },
+        {
+          "hs_6": "3305.90",
+          "value_inr": 4320,
+          "share": 0.1176
+        },
+        {
+          "hs_6": "3401.11",
+          "value_inr": 1280,
+          "share": 0.0348
+        }
+      ],
+      "dominant_hs_6": "3304.99"
+    },
+    {
+      "country": "NZ",
+      "country_name": "New Zealand",
+      "attempts": 11,
+      "declined": 8,
+      "decline_rate": 0.7273,
+      "leaked_inr": 28250,
+      "captured_inr": 10200,
+      "attempted_aov_inr": 3495,
+      "max_accepted_cart_inr": 4450,
+      "unique_buyers": 6,
+      "repeat_buyers": 4,
+      "repeat_rate": 0.6667,
+      "hs_mix": [
+        {
+          "hs_6": "3304.99",
+          "value_inr": 26300,
+          "share": 0.7392
+        },
+        {
+          "hs_6": "3305.90",
+          "value_inr": 5760,
+          "share": 0.1619
+        },
+        {
+          "hs_6": "3401.11",
+          "value_inr": 3520,
+          "share": 0.0989
+        }
+      ],
+      "dominant_hs_6": "3304.99"
+    }
+  ]
+}
